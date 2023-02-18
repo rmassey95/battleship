@@ -10,29 +10,6 @@ const newGame = () => {
   game();
 };
 
-// const createUserBoard = (gameboard) => {
-//   const userBoard = document.createElement("button");
-//   userBoard.classList.add("user-board");
-
-//   for (let i = 0; i < 100; i++) {
-//     const tile = document.createElement("button");
-//     tile.classList.add("user-tile");
-//     if ((i + 1) % 10 === 0) {
-//       tile.classList.add("last-col");
-//     }
-//     if (i + 1 - 90 > 0) {
-//       tile.classList.add("last-row");
-//     }
-//     if (gameboard.board[i].shipHere) {
-//       tile.classList.add("ship");
-//     }
-//     tile.setAttribute("loc", i);
-//     userBoard.appendChild(tile);
-//   }
-//   gameContainer.append(userBoard);
-//   document.querySelector("body").append(gameContainer);
-// };
-
 const displayWinner = (whoWon) => {
   const endGame = document.createElement("div");
   const winner = document.createElement("h1");
@@ -61,45 +38,6 @@ const clearScreen = () => {
     endGame.remove();
   }
 };
-
-// const createCompBoard = (gameboard) => {
-//   const compBoard = document.createElement("button");
-//   compBoard.classList.add("comp-board");
-
-//   for (let i = 0; i < 100; i++) {
-//     const tile = document.createElement("button");
-//     tile.classList.add("comp-tile");
-//     if ((i + 1) % 10 === 0) {
-//       tile.classList.add("last-col");
-//     }
-//     if (i + 1 - 90 > 0) {
-//       tile.classList.add("last-row");
-//     }
-//     if (gameboard.board[i].shipHere) {
-//       tile.classList.add("ship");
-//     }
-//     tile.setAttribute("loc", i);
-
-//     tile.addEventListener("click", (e) => {
-//       let attack = tile.getAttribute("loc");
-//       gameboard.receiveAttack(gameboard.board[i].coords);
-
-//       tile.classList.add("clicked");
-
-//       if (gameboard.allShipsSunk()) {
-//         clearScreen();
-//         displayWinner();
-//       } else {
-
-//       }
-
-//       tile.disabled = true;
-//     });
-//     compBoard.appendChild(tile);
-//   }
-//   gameContainer.append(compBoard);
-//   document.querySelector("body").append(gameContainer);
-// };
 
 const createBoard = (user, comp) => {
   const compBoard = document.createElement("div");
@@ -133,9 +71,6 @@ const createBoard = (user, comp) => {
     }
     if (i + 1 - 90 > 0) {
       tile.classList.add("last-row");
-    }
-    if (comp.gameboard.board[i].shipHere) {
-      tile.classList.add("ship");
     }
     tile.setAttribute("loc", i);
 

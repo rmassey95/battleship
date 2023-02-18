@@ -1,6 +1,6 @@
 import { Player } from "./player";
 import "./style.css";
-import { createBoard, createCompBoard, createUserBoard, newGame } from "./dom";
+import { createBoard } from "./dom";
 
 const game = () => {
   const user = Player();
@@ -8,9 +8,6 @@ const game = () => {
 
   user.randGenPositions();
   comp.randGenPositions();
-
-  // createUserBoard(user.gameboard);
-  // createCompBoard(comp.gameboard);
 
   createBoard(user, comp);
 };
